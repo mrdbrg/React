@@ -1,34 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-let needGroceries = Math.random() < 0.5;
-
+let isPentryEmpty = Math.random() < 0.5;
 
 const groceries = ['Mango', 'Orange', 'Grapes', 'Potatoes', 'Organic Chicken', 'Eggs', 'Milk', 'Bread'];
 
-	if(needGroceries) {
+	if(isPentryEmpty) {
    const grocerieList = groceries.map((item, index) =>
       <li key={"item_" + index}>{item}</li>
   );
-
-  const myList = (
-		<div>
-    <h3>Time to grocery shop!</h3>
-		<strong>Here's what I need:</strong>
+                                    
+  const myGrocerieList = (
+		<div>                                      
+    <h3>Time to go shopping!</h3>                 
 		<ul>{grocerieList}</ul>
 		</div>
   );
-
-	ReactDOM.render(myList, document.getElementById('app'))
+ 
+	ReactDOM.render(myGrocerieList, document.getElementById('app'))
 
 } else {
-  const cabinetFull = (
-  	<h3>I still have food.</h3>
+  const fullPentry = (
+  	<h3>I still have food in the pentry.</h3>
   );
-
-  ReactDOM.render(cabinetFull, document.getElementById('app'))
-}
-
-
-// ReactDOM.render goes here:
-ReactDOM.render(myList, document.getElementById('app'))
+  
+  ReactDOM.render(fullPentry, document.getElementById('app'))
+}                          
