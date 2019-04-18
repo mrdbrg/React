@@ -53,7 +53,7 @@ const comment = {
     name: 'Spidey',
     avatarUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Web_of_Spider-Man_Vol_1_129-1.png/250px-Web_of_Spider-Man_Vol_1_129-1.png'
   },
-  manbojumbo: "Checking to see where 'props' is."
+  mambojumbo: "Checking to see where 'props' is."
 
 };
 
@@ -62,7 +62,7 @@ ReactDOM.render(
     date={comment.date}
     text={comment.text}
     user_1={comment.author}
-    manbojumbo={comment.manbojumbo}
+    manbojumbo={comment.mambojumbo}
     />,
   document.getElementById('root')
 );
