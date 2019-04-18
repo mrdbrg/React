@@ -1,6 +1,6 @@
 const user = {
-  firstName: 'Maverick',
-  lastName: 'Bianchi'
+  firstName: 'Marlon',
+  lastName: 'Braga'
 };
 
 const attributes = {
@@ -23,6 +23,12 @@ function getGreeting(user, attr) {
   return <h1>Hello, Stranger.</h1>
 }
 
+// const longerElement = React.createElement(
+//   'h1',
+//   {className: 'colorBlue'},
+//   'Hello, world!'
+// );
+
 const element = (
   getGreeting(user, attributes)
 );
@@ -33,7 +39,7 @@ ReactDOM.render(
 );
 
 
-// const name = "Maverick Bianchi";
+// const name = "Marlon Braga";
 // const element = <h1>Hello, {name}</h1>;
 
 // ReactDOM.render(
