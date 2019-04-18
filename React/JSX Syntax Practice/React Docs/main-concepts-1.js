@@ -1,6 +1,6 @@
 const user = {
-  firstName: 'Marlon',
-  lastName: 'Braga'
+  firstName: 'Maverick',
+  lastName: 'Bianchi'
 };
 
 const attributes = {
@@ -39,7 +39,7 @@ ReactDOM.render(
 );
 
 
-// const name = "Marlon Braga";
+// const name = "Maverick Bianchi";
 // const element = <h1>Hello, {name}</h1>;
 
 // ReactDOM.render(
