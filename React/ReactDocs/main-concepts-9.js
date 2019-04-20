@@ -1,3 +1,6 @@
+// This works because in JavaScript, true && expression always evaluates to expression,
+// and false && expression always evaluates to false.
+
 function Mailbox(props) {
   const unreadMessages = props.unreadMessages;
   return (
