@@ -1,23 +1,27 @@
+obj = {
+  loggedIn: 'imLoggedIn',
+  loggedOff: 'imLoggedOff'
+};
+
 class LoginControl extends React.Component {
   constructor(props) {
     super(props);
-    // this.handleLoginClick = this.handleLoginClick.bind(this);
-    // this.handleLogoutClick = this.handleLogoutClick.bind(this);
+    this.handleLoginClick = this.handleLoginClick.bind(this);
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
     this.state = {isLoggedIn: false};
   }
 
-  handleLoginClick = (event) => {
-    this.setState({isLoggedIn: true});
+  handleLoginClick() {
+     this.setState({isLoggedIn: true});
   }
 
-  handleLogoutClick = (event) => {
-    this.setState({isLoggedIn: false});
+  handleLogoutClick() {
+     this.setState({isLoggedIn: false});
   }
 
   render() {
     const isLoggedIn = this.state.isLoggedIn;
     let button;
-
     if (isLoggedIn) {
       button = <LogoutButton onClick={this.handleLogoutClick} />;
     } else {
@@ -25,10 +29,13 @@ class LoginControl extends React.Component {
     }
 
     return (
-       <div>
+      <div>
+        <h2 className={isLoggedIn ? obj.loggedIn : obj.loggedOff}>
+          The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
+        </h2>
         <Greeting isLoggedIn={isLoggedIn} />
         {button}
-       </div>
+      </div>
     );
   }
 }
@@ -43,10 +50,10 @@ function GuestGreeting(props) {
 
 function Greeting(props) {
   const isLoggedIn = props.isLoggedIn;
-  if (isLoggedIn) {
-    return <UserGreeting />;
-  }
-  return <GuestGreeting />;
+    if (isLoggedIn) {
+      return <UserGreeting />;
+    }
+    return <GuestGreeting />;
 }
 
 function LoginButton(props) {
@@ -69,3 +76,8 @@ ReactDOM.render(
   <LoginControl />,
   document.getElementById('root')
 );
+
+
+    // <h2>
+    //   The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
+    // </h2>
