@@ -33,8 +33,6 @@ class LoginControl extends React.Component {
   }
 }
 
-// FUNCTIONS
-
 function UserGreeting(props) {
   return <h1>Welcome back!</h1>;
 }
