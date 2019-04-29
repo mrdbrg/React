@@ -43,7 +43,13 @@ class SignUpDialog extends React.Component {
     );
   }
 
+  handleChange = (event) => {
+    this.setState({login: event.target.value});
+  }
 
+  handleSignUp = () => {
+    alert(`Welcome aboard, ${this.state.login}!`);
+  }
 
 }
 
