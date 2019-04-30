@@ -1,6 +1,6 @@
 /*
-  To reinforce knowledge and understanding after looking into the original I create a steps
-  guide with only the concepts to be used and I try to replicate the code.
+  To reinforce knowledge and understanding, after looking into the original I wrote a few steps
+  guide on a piece of paper and with only the concepts used I try to replicate the code original.
 */
 
 class ProductCategoryRow extends React.Component {
