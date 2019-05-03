@@ -1,6 +1,6 @@
 /*
   Programming Pattern
-  Child Components Update Sibling Components
+  Child Components Update Their Parents' state
 */
 import React from 'react';
 import ReactDOM from 'react-dom';
