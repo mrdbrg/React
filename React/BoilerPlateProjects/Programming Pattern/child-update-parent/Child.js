@@ -1,3 +1,7 @@
+/*
+  Programming Pattern
+  Child Components Update Sibling Components
+*/
 import React from 'react';
 
 export class Child extends React.Component {
