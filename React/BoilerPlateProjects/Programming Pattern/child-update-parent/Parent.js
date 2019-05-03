@@ -1,7 +1,14 @@
 /*
   Programming Pattern
   Child Components Update Their Parents' state
+
+  A stateful, parent component passes down an event handler
+  to a stateless, child component. The child component then
+  uses that event handler to update its parent’s state.
+
+  Source: https://bit.ly/2IWJIXs
 */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Child } from './Child';

@@ -1,7 +1,13 @@
 /*
-  Programming Patter:
+  Programming Patter
   Stateless Components Inherit From Stateful Components
+
+  A stateful, parent component passes down a prop to a stateless,
+  child component.
+
+  Source: https://bit.ly/2IWJIXs
 */
+
 import React from "react";
 import ReactDOM from 'react-dom';
 import { Child } from './Child';
