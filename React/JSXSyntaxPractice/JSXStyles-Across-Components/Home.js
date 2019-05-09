@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AttentionGrabber } from './AttentionGrabber';
+import { styles } from './styles';
 
 export class Home extends React.Component {
   render() {
