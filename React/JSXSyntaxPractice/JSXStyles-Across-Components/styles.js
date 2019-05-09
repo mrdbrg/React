@@ -5,7 +5,6 @@ const padding = '45px 0';
 const color = 'green';
 
 // Exporting all the styles so they can be imported by other components. ** Attention to the pattern **
-
 export const styles = {
   fontFamily: fontFamily,
   background: background,

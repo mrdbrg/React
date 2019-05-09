@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { AttentionGrabber } from './AttentionGrabber';
 import { styles } from './styles';
 
+// New object with styles imported from styles.js
 const divStyle = {
   background: style.background,
   height: '100%'
