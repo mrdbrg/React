@@ -12,6 +12,6 @@ const h1Style = {
 
 export class AttentionGrabber extends React.Component {
 	render() {
-		return <h1>WELCOME TO MY HOMEPAGE!</h1>;
+		return <h1 style={h1Style}>WELCOME TO MY HOMEPAGE!</h1>;
 	}
 }

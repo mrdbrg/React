@@ -12,7 +12,7 @@ const divStyle = {
 export class Home extends React.Component {
   render() {
     return (
-      <div>
+      <div style={divStyle}>
         <AttentionGrabber />
         <footer>THANK YOU FOR VISITING MY HOMEPAGE!</footer>
       </div>
