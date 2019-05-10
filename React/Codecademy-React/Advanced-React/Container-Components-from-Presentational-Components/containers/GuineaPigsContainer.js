@@ -2,6 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { GuineaPigs } from '../components/GuineaPigs';
 
+/*
+  Programming Pattern:
+  In this programming pattern, the container component does the work of
+  figuring out what to display. The presentational component does the work
+  of actually displaying it. If a component does a significant amount of
+  work in both areas, then that’s a sign that you should use this pattern!
+
+  source: https://bit.ly/309NbHJ
+*/
+
 const GUINEAPATHS = [
   'https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-guineapig-1.jpg',
   'https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-guineapig-2.jpg',
