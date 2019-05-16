@@ -25,8 +25,36 @@
         }
       }
 
+      class Circle extends React.Component {
+        render() {
+          return (
+            <h1>Circle</h1>
+          );
+        }
+      }
+
+      class Square extends React.Component {
+        render() {
+          return (
+            <h1>Square</h1>
+          );
+        }
+      }
+
+      class Rectangle extends React.Component {
+        render() {
+          return (
+            <h1>Rectangle</h1>
+          );
+        }
+      }
+
       ReactDOM.render(
-        <Shapes />,
+        <div>
+          <Circle />
+          <Square />
+          <Rectangle />
+        </div>,
         document.getElementById('app')
       )
     </script>
