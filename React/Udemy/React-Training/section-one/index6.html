@@ -19,15 +19,19 @@
     <!-- JAVASCRIPT -->
     <script type="text/babel">
 
-      ReactDOM.render(
-        // CHALLENGE - RENDER 3 JSX ELEMENTS TO THE DOM
-        <div>
-          <h1>The beginning</h1>
-          <h2>The story of a fallen angel</h2>
-          <p>Banished by Michael, the most powerful archangel of all, Elliot has wandered the world for thousands of years. </p>
-        </div>,
-        document.getElementById('app')
-      );
+      ReactDOM.render(React.createElement(
+      "div",
+      null,
+      React.createElement(
+      "h1",
+      null,
+      "Hello World"),
+      React.createElement(
+      "h2",
+      null,
+      "How are you today ?")),
+      document.getElementById('app'));
+      
     </script>
 
   </body>
