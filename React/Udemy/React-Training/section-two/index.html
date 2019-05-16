@@ -16,6 +16,16 @@
     <div id="app">React has not rendered yet!</div>
 
     <script type="text/babel">
+      var ColorSpectrum = function() {
+        return (
+          <h1>Red, Orange, Yellow, Green, Blue, Indigo, Violet</h1>
+        );
+      }
+      
+      // CHALLENGE
+      // CREATE A COMPONENT FOR ALL THE COLORS OF THE SPECTRUM AND RENDER THEM
+      // TO THE DOM WITHIN ONE PARENT DIV
+
       var Red = function() {
         return (
           <h1>Red</h1>
@@ -55,11 +65,6 @@
       var Violet = function() {
         return (
           <h1>Violet</h1>
-        );
-      }
-      var ColorSpectrum = function() {
-        return (
-          <h1>Red, Orange, Yellow, Green, Blue, Indigo, Violet</h1>
         );
       }
       ReactDOM.render(
