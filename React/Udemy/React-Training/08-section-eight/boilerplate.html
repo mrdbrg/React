@@ -19,29 +19,8 @@
 
   <!-- JAVASCRIPT -->
   <script type="text/babel">
-
-    class LifeWarnings extends React.Component {
-
-      handleButtonTouch() {
-        alert("ouch... that's hot!!!");
-      }
-      handleButtonDrink() {
-        alert("Brain freeeeeze!!!");
-      }
-
-      render() {
-        return (
-          <div>
-            <h1>Life Warnings</h1>
-            <button type="button" onMouseOver={this.handleButtonTouch}>Touch Stove</button>
-            <button type="button" onMouseOver={this.handleButtonDrink}>Drink Slurpee Really Fast</button>
-          </div>
-        );
-      }
-    }
-
     ReactDOM.render(
-      <LifeWarnings />,
+      <h1>Hello World</h1>,
       document.getElementById("app")
     );
   </script>
