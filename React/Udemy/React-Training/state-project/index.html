@@ -47,14 +47,40 @@
       render() {
         const dinnerImage = this.props.img;
 
+        const wrapperStyle =  {
+          display: "inline-block",
+          margin: 40,
+          height: 550,
+          width: 300,
+          padding: 0,
+          textAlign: "center",
+          backgroundColor: "#FFF",
+          borderRadius: 25,
+          filter: "drop-shadow(0px 0px 5px #555)"
+        };
+        const imgCard = {
+          height: 200,
+          width: 200,
+          marginTop: 20,
+          filter: "drop-shadow(0px 0px 5px #555)"
+        };
+        const titleStyle = {
+          margin: "10 0 10 0"
+        };
+        const buttonStyle = {
+          padding: 10,
+          borderRadius: 25,
+          margin: 0
+        }
+
         return (
-          <div className="wrapper">
-            <img className="imgCard" id="item-{number}"src={dinnerImage}/>
+          <div style={wrapperStyle}>
+            <img style={imgCard} src={dinnerImage}/>
             <h1>Dinner Time</h1>
-            <h5 className="titleStyle">Vote here if you want this</h5>
-              <button className="buttonStyle" onClick={this.handleButtonAddOne} type="button">+1</button>
-            <h5 className="titleStyle">Vote here if you want this</h5>
-              <button className="buttonStyle" onClick={this.handleButtonMinusOne}type="button">-1</button>
+            <h5 style={titleStyle}>Vote here if you want this</h5>
+              <button style={buttonStyle} onClick={this.handleButtonAddOne} type="button">+1</button>
+            <h5 style={titleStyle}>Vote here if you want this</h5>
+              <button style={buttonStyle} onClick={this.handleButtonMinusOne}type="button">-1</button>
             <h5>Total:{this.state.total}</h5>
           </div>
         );
