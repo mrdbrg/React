@@ -21,7 +21,7 @@
   <script type="text/babel">
 
     // class GuessAge extends React.Component {
-    //     // BINDING IN THE CONSTRUCTOR METHOD 
+    //     // BINDING IN THE CONSTRUCTOR METHOD
     //   constructor(props) {
     //     super(props);
     //     this.state = {
@@ -45,6 +45,30 @@
     //   }
     // }
 
+    // class GuessAge extends React.Component {
+    //   constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //       age: 'Guess My Age'
+    //     };
+    //   }
+    //
+    //   onButtonClick() {
+    //     this.setState({ age: 37 });
+    //   }
+    //
+    //   // BINDING IN THE EVENT HANDLER
+    //   render() {
+    //     return (
+    //       <div>
+    //         <h1>Guessing My Age</h1>
+    //         <h2>{this.state.age}</h2>
+    //         <button type="button" onClick={this.onButtonClick.bind(this)}>Reveal My Age</button>
+    //       </div>
+    //     );
+    //   }
+    // }
+
     class GuessAge extends React.Component {
       constructor(props) {
         super(props);
@@ -56,14 +80,14 @@
       onButtonClick() {
         this.setState({ age: 37 });
       }
-
-      // BINDING IN THE EVENT HANDLER
+      
+      // BINDING WITH THE FAT ARROW FUNCTION
       render() {
         return (
           <div>
             <h1>Guessing My Age</h1>
             <h2>{this.state.age}</h2>
-            <button type="button" onClick={this.onButtonClick.bind(this)}>Reveal My Age</button>
+            <button type="button" onClick={() => this.onButtonClick()}>Reveal My Age</button>
           </div>
         );
       }
