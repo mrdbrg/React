@@ -26,11 +26,14 @@
       let siblings = props.siblings;
 
       // Use the filter method to only show the female siblings.
-      let femaleSiblings = siblings.filter(function(person) {
-        return person.female;
-      });
+      // let femaleSiblings = siblings.filter(function(person) {
+      //   return person.female;
+      // });
 
-      let siblingsListItem = femaleSiblings.map(function(person) {
+      // METHOD CHAINING
+      let siblingsListItem = siblings.filter(function(person) {
+        return person.female
+      }).map(function(person) {
           return <div key={person.id}>{person.name}</div>
       });
 
