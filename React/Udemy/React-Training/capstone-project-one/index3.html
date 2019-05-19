@@ -22,20 +22,25 @@
 
       // FriendLy Complex Component
       function FriendLy(props) {
-        const friendlyStyle = {
-          display: "inline-block",
-          margin: 40,
-          height: 300,
-          width: 200,
-          padding: 0,
-          backgroundColor: "#FFF",
-          filter: "drop-shadow(0px 0px 5px #555)"
-        }
+        const people = props.people;
+
+        const cards = people.map((person) => {
+          const friendlyStyle = {
+            display: "inline-block",
+            margin: 40,
+            height: 300,
+            width: 200,
+            padding: 0,
+            backgroundColor: "#FFF",
+            filter: "drop-shadow(0px 0px 5px #555)"
+          }
+
+          return <div style={friendlyStyle} className="centered"> <Avatar img={person.img} /> <UserName name={person.name} /> <GetConnected/> </div>
+        });
+
         return (
-          <div style={friendlyStyle} className="centered">
-            <Avatar img={props.img} />
-            <UserName name={props.name} />
-            <GetConnected/>
+          <div>
+            {cards}
           </div>
         );
       }
@@ -107,48 +112,25 @@
           );
         }
 
-      // Challenge - Mass produce individual FriendLy cards using props
-      // Challenge 1 - Use props to pass the name of the person from ReactDOM.render() method to parent FriendLy
-      // component to child UserName component
-      // Challenge 2 - Use props to pass the image URL from ReactDOM.render() method to parent FriendLy component
-      // to child Avatar component
-      // Challenge 3 - Mass produce individual FriendLy cards by providing props and values in our ReactDOM.render()
-      // method
+        // Challenge - pass people array to the FriendLy component
+
+        var people = [{name: "Rob", img: "https://pbs.twimg.com/profile_images/699422966556168193/zUm4vhAo.jpg"},
+                   {name: "Charles", img:"https://static.pexels.com/photos/38630/bodybuilder-weight-training-stress-38630.jpeg"},
+                   {name: "Natalie", img: "https://static.pexels.com/photos/509195/pexels-photo-509195.jpeg"},
+                   {name: "Jenny", img: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"},
+                   {name: "Sarah", img: "https://static.pexels.com/photos/324658/pexels-photo-324658.jpeg"},
+                   {name: "Josh", img: "https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"},
+                   {name: "Kenny", img: "https://static.pexels.com/photos/325682/pexels-photo-325682.jpeg"},
+                   {name: "John", img: "https://static.pexels.com/photos/45882/man-crazy-funny-dude-45882.jpeg"},
+                   {name: "Alisha", img: "https://static.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg"},
+                   {name: "Pedro", img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}
+
+                   ];
 
       ReactDOM.render(
-      <div class="container">
         <FriendLy
-          name="Rob"
-          img="https://pbs.twimg.com/profile_images/699422966556168193/zUm4vhAo.jpg" />
-        <FriendLy
-          name="Steven"
-          img="https://static.pexels.com/photos/38630/bodybuilder-weight-training-stress-38630.jpeg" />
-        <FriendLy
-          name="Tom"
-          img="https://static.pexels.com/photos/91227/pexels-photo-91227.jpeg" />
-        <FriendLy
-          name="Natasha"
-          img="https://static.pexels.com/photos/509195/pexels-photo-509195.jpeg" />
-        <FriendLy
-          name="Matilda"
-          img="https://static.pexels.com/photos/324658/pexels-photo-324658.jpeg" />
-        <FriendLy
-          name="William"
-          img="https://static.pexels.com/photos/45882/man-crazy-funny-dude-45882.jpeg" />
-        <FriendLy
-          name="Alessadra"
-          img="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
-        <FriendLy
-          name="Ann"
-          img="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
-        <FriendLy
-          name="Li"
-          img="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
-        <FriendLy
-          name="Pedro"
-          img="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
-      </div>,
-        document.getElementById('app')
+          people={people} />,
+          document.getElementById('app')
       );
     </script>
   </body>
