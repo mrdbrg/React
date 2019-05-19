@@ -13,7 +13,7 @@
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
-    <title>Capstone Project One - Part 3</title>
+    <title>Capstone Project One - Part 4</title>
   </head>
   <body>
     <div id="app">React has not rendered yet</div>
@@ -24,7 +24,9 @@
       function FriendLy(props) {
         const people = props.people;
 
-        const cards = people.map((person) => {
+        const womensCards = people.filter((person) => {
+          return person.female
+        }).map((person) => {
           const friendlyStyle = {
             display: "inline-block",
             margin: 40,
@@ -34,14 +36,17 @@
             backgroundColor: "#FFF",
             filter: "drop-shadow(0px 0px 5px #555)"
           }
-
           return <div style={friendlyStyle} className="centered"> <Avatar img={person.img} /> <UserName name={person.name} /> <GetConnected/> </div>
         });
 
         return (
           <div>
-            {cards}
+            {womensCards}
           </div>
+          <hr/>
+          // <div>
+          //   {mensCards}
+          // </div>
         );
       }
 
@@ -114,17 +119,17 @@
 
         // Challenge - pass people array to the FriendLy component
 
-        var people = [{name: "Rob", img: "https://pbs.twimg.com/profile_images/699422966556168193/zUm4vhAo.jpg"},
-                     {name: "Charles", img:"https://static.pexels.com/photos/38630/bodybuilder-weight-training-stress-38630.jpeg"},
-                     {name: "Natalie", img: "https://static.pexels.com/photos/509195/pexels-photo-509195.jpeg"},
-                     {name: "Jenny", img: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"},
-                     {name: "Sarah", img: "https://static.pexels.com/photos/324658/pexels-photo-324658.jpeg"},
-                     {name: "Josh", img: "https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"},
-                     {name: "Kenny", img: "https://static.pexels.com/photos/325682/pexels-photo-325682.jpeg"},
-                     {name: "John", img: "https://static.pexels.com/photos/45882/man-crazy-funny-dude-45882.jpeg"},
-                     {name: "Alisha", img: "https://static.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg"},
-                     {name: "Li", img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}
-                   ];
+        var people = [{id: 0, name: "Rob", gender: "male", img: "https://pbs.twimg.com/profile_images/699422966556168193/zUm4vhAo.jpg"},
+              {id: 1, name: "Charles", gender: "male", img:"https://static.pexels.com/photos/38630/bodybuilder-weight-training-stress-38630.jpeg"},
+              {id: 2,  name: "Natalie", gender: "female", img: "https://static.pexels.com/photos/509195/pexels-photo-509195.jpeg"},
+              {id: 3, name: "Jenny", gender: "female", img: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"},
+              {id: 4, name: "Sarah", gender: "female", img: "https://static.pexels.com/photos/324658/pexels-photo-324658.jpeg"},
+              {id: 5, name: "Josh", gender: "male", img: "https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"},
+              {id: 6, name: "Kenny", gender: "male", img: "https://static.pexels.com/photos/325682/pexels-photo-325682.jpeg"},
+              {id: 7, name: "John", gender: "male", img: "https://static.pexels.com/photos/45882/man-crazy-funny-dude-45882.jpeg"},
+              {id: 8, name: "Alisha", gender: "female", img: "https://static.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg"},
+              {id: 9, name: "Li", gender: "female", img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}
+              ];
 
       ReactDOM.render(
         <FriendLy
