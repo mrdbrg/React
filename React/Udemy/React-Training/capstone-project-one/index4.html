@@ -25,25 +25,53 @@
         const people = props.people;
 
         const womensCards = people.filter((person) => {
-          return person.female
+          return person.gender === "female"
         }).map((person) => {
           const friendlyStyle = {
             display: "inline-block",
-            margin: 40,
+            marginLeft: 70,
+            marginBottom: 20,
             height: 300,
             width: 200,
             padding: 0,
             backgroundColor: "#FFF",
             filter: "drop-shadow(0px 0px 5px #555)"
           }
-          return <div style={friendlyStyle} className="centered"> <Avatar img={person.img} /> <UserName name={person.name} /> <GetConnected/> </div>
+          return <div style={friendlyStyle} key={person.id} className="centered">
+            <Avatar img={person.img} />
+            <UserName name={person.name} />
+            <GetConnected/>
+          </div>
+        });
+
+        const mensCards = people.filter((person) => {
+          return person.gender === "male"
+        }).map((person) => {
+          const friendlyStyle = {
+            display: "inline-block",
+            marginLeft: 70,
+            marginBottom: 20,
+            height: 300,
+            width: 200,
+            padding: 0,
+            backgroundColor: "#FFF",
+            filter: "drop-shadow(0px 0px 5px #555)"
+          }
+          return <div style={friendlyStyle} key={person.id} className="centered">
+            <Avatar img={person.img} />
+            <UserName name={person.name} />
+            <GetConnected/>
+          </div>
         });
 
         return (
           <div>
-            {womensCards}
+            <h1>Female</h1>
+            <div>{womensCards}</div>
+            <hr/>
+            <h1>Male</h1>
+            <div>{mensCards}</div>
           </div>
-          <hr/>
           // <div>
           //   {mensCards}
           // </div>
