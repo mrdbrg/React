@@ -27,19 +27,19 @@
         this.state = {
           total: 0
         };
-        this.handleButtonAddOne = this.handleButtonAddOne.bind(this);
-        this.handleButtonMinusOne = this.handleButtonMinusOne.bind(this);
+        this.handleButtonAdd = this.handleButtonAdd.bind(this);
+        this.handleButtonSubtract = this.handleButtonSubtract.bind(this);
       }
 
-      handleButtonAddOne(event) {
+      handleButtonAdd() {
         this.setState({
-          total: event.target.value++
+          total: this.state.total + 1
         });
       }
 
-      handleButtonMinusOne(event) {
+      handleButtonSubtract(event) {
         this.setState({
-          total: event.target.value--
+          total: this.state.total - 1
         });
 
       }
@@ -75,12 +75,12 @@
 
         return (
           <div style={wrapperStyle}>
-            <img style={imgCard} src={dinnerImage}/>
+            <img style={imgCard} src={dinnerImage} alt="Food Image"/>
             <h1>Dinner Time</h1>
             <h5 style={titleStyle}>Vote here if you want this</h5>
-              <button style={buttonStyle} onClick={this.handleButtonAddOne} type="button">+1</button>
-            <h5 style={titleStyle}>Vote here if you want this</h5>
-              <button style={buttonStyle} onClick={this.handleButtonMinusOne}type="button">-1</button>
+              <button style={buttonStyle} onClick={this.handleButtonAdd} type="button">+1</button>
+            <h5 style={titleStyle}>Vote here if you do not want this</h5>
+              <button style={buttonStyle} onClick={this.handleButtonSubtract}type="button">-1</button>
             <h5>Total:{this.state.total}</h5>
           </div>
         );
