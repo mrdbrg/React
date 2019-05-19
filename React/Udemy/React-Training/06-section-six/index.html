@@ -25,6 +25,7 @@
     function FamilyList(props) {
       let siblings = props.siblings;
 
+      // Use the map method to show all the siblings.
       const siblingsListItem = siblings.map(function(person) {
           return <div key={person.id}>{person.name}</div>
       });
