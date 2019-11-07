@@ -9,6 +9,11 @@ class App extends React.Component {
           num={10}
           bangs={4}
         />  
+
+        <Hello 
+          to="Marta" 
+        />  
+
         <Hello 
           to="Tom" 
           from="Rod" 
