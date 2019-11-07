@@ -1,0 +1,21 @@
+.Machine {
+  border: 1px solid black;
+  background: lightcoral;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.Machine-win {
+  height: 30px;
+  width: 100%;
+  color: white;
+  background-color: lightseagreen;
+  text-align: center;
+}
+
+.Machine-lose {
+  height: 30px;
+  width: 100%;
+  color: white;
+  background-color: darkmagenta;
+}
