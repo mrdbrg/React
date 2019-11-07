@@ -9,7 +9,9 @@ class Machine extends React.Component {
     return (
       <div className="Machine">
         <h3 style={styleFruits}> {s1} {s2} {s3}  </h3>
-        <h2 className={winner ? "Machine-win" : "Machine-lose"}>{winner ? "You win!" : "You lose!"}</h2>
+        <h2 className={winner ? "Machine-win" : "Machine-lose"}>
+          {winner ? "You win!" : "You lose!"}
+        </h2>
       </div>
     );
   }
