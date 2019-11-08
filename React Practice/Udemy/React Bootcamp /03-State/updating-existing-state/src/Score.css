@@ -1,0 +1,36 @@
+.Score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.Score button {
+  align-self: center;
+  width: 10em;
+  font-size: 1.5em;
+  border: 0px;
+  background-color: darkmagenta;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 0.5em;
+  margin: 0.5em;
+  box-shadow: inset -1px 2px 10px 0 #ce02ce,
+      inset 2px -2px 10px 0 #490049;
+  outline: none;
+}
+
+.Score button:hover {
+  background-color: #9b0b9b
+}
+
+.Score button:active {
+  box-shadow: inset -2px 2px 6px 0 #490049,
+  inset 1px -1px 6px 0 #ce02ce; 
+}
+
+.Score-buttons {
+  display: flex;
+  justify-content: center;
+}
