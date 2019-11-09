@@ -10,6 +10,6 @@ Instead you can make a copy of the data structure in question by making use of P
 - The safest way to update state is to make a copy of it, and then call this.setState with the new copy.
 - This pattern is a good habit to get into for React apps and _required_ for using Redux.
 
-_The content described in the README file was extracted from the (https://www.udemy.com/course/modern-react-bootcamp/)[The Modern React Bootcamp]  from Colt Steele._
+_The content described in the README file was extracted from the [The Modern React Bootcamp](https://www.udemy.com/course/modern-react-bootcamp/).
 
 _The concept was learned by following the step by step tutorial from Colt Steele's course. This practice exercise, however, have been done from scratch (not copied and pasted) and modified to implement previous concepts._
