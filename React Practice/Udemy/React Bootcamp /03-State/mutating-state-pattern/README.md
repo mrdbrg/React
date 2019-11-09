@@ -12,4 +12,4 @@ Instead you can make a copy of the data structure in question by making use of P
 
 _The content described in this README file was extracted from the_ [The Modern React Bootcamp](https://www.udemy.com/course/modern-react-bootcamp/) _by Colt Steele._
 
-_The concept was learned by following the step by step tutorial from Colt Steele's course. This practice exercise, however, have been done from scratch (not copied and pasted) and modified to implement previous concepts._
+_The concept in this practice exercise was learned by following the step by step tutorial from Colt Steele's course. This exercise however, like in most of my repositories, have been done from scratch (not copied and pasted) and modified to implement previous concepts._
