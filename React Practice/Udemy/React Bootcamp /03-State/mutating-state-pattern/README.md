@@ -1,4 +1,4 @@
-# Mutable State Structures
+# Mutable Data Structures in State
 
 ## Immutable State Updates
 
