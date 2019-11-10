@@ -1,6 +1,5 @@
-# setState callback from
+# setState callback form and Abstracting state updates
 
-## ABSTRACTING STATE UPDATES
 ### Implementing Functional State has the following advantages:
 
 - It's easier to test with a plain function.
