@@ -1,4 +1,6 @@
-# setState callback form and Abstracting state updates
+# React State Patterns
+
+## setState callback form and Abstracting state updates
 
 ### Implementing Functional State has the following advantages:
 
