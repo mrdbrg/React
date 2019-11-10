@@ -4,7 +4,7 @@
 
 _Mutating nested data structures in your state can cause problems with React._
 
-Instead you can make a copy of the data structure in question by making use of Pure Functions such as **.map()**, **.filter()**, and **.reduce()** or the spread operator.
+Instead of directly mutating an object or an array and saving it to State we can make a copy of the existing data structure in question and update that. Tools such as Pure Functions such as **.map()**, **.filter()**, and **.reduce()** and the spread operator will be helpful with this pattern.
 
 - Immutable State just means that there is an old state object and a new state object that are both a snapshots in time
 - The safest way to update state is to make a copy of it, and then call this.setState with the new copy.
