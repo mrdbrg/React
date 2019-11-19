@@ -9,10 +9,10 @@
   onClick={this.handleClick.bind(this)}
 </div>
 
-#CONS:
+### CONS:
 1. It's very explicit.
 
-#PROS:
+### PROS:
 1. If we need to pass to multiple components we need to bind it multiple times.
 2. Binds create a new function each time a component is rendered inside render(). * In more complex apps it can have an impact in the app's performance. *
 
@@ -21,10 +21,10 @@
   onClick={() => this.handleClick()}
 </div>
 
-#CONS:
+### CONS:
 1. No mention of bind.
 
-#PROS:
+### PROS:
 
 1. Intent less clear.
 2. If we need to pass to multiple components we need to create an arrow function every time.
@@ -32,11 +32,11 @@
 
 ## 3. Bind in the constructor
 
-#PROS:
+### PROS:
 1. You only need to bind once.
 2. It's more performant.
 
-#CONS:
+### CONS:
 1. It's lengthy.
 
 - It's easier to test with a plain function.
