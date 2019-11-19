@@ -15,7 +15,7 @@ class Hover extends Component {
         className="Hover" 
         style={{backgroundColor: "yellow"}}
         onMouseEnter={this.handleMouseEnter}>
-        <p>Hover me and check the console!</p>
+        <p>Hover me and check the console.</p>
         </div>
     )
   }
