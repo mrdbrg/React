@@ -12,11 +12,11 @@
 ```
 
 ### PROS:
-1. It's very explicit.
+- It's very explicit.
 
 ### CONS:
-1. If we need to pass to multiple components we need to bind it multiple times.
-2. Binds create a new function each time a component is rendered inside render(). * In more complex apps it can have an impact in the app's performance. *
+- If we need to pass to multiple components we need to bind it multiple times.
+- Binds create a new function each time a component is rendered inside render(). * In more complex apps it can have an impact in the app's performance. *
 
 ## 2. Arrow function
 ```
@@ -25,12 +25,12 @@
 </div>
 ```
 ### PROS:
-1. No mention of bind.
+- No mention of bind.
 
 ### CONS:
-1. Intent less clear.
-2. If we need to pass to multiple components we need to create an arrow function every time.
-3. Binds create a new function each time a component is rendered inside render(). * In more complex apps it can have an impact in the app's performance. *
+- Intent less clear.
+- If we need to pass to multiple components we need to create an arrow function every time.
+- Binds create a new function each time a component is rendered inside render(). * In more complex apps it can have an impact in the app's performance. *
 
 ## 3. Bind in the constructor
 ```
@@ -45,15 +45,11 @@ constructor(props) {
 </div>
 ```
 ### PROS:
-1. You only need to bind once.
-2. It's more performant.
+- You only need to bind once.
+- It's more performant.
 
 ### CONS:
-1. It's lengthy.
-
-- It's easier to test with a plain function.
-- It's easier to read.
-- This pattern comes up all the time in REDUX. 
+- It's lengthy.
 
 _The content described in this README file is often a summary from the_ [The Modern React Bootcamp](https://www.udemy.com/course/modern-react-bootcamp/) _by Colt Steele._
 
