@@ -1,68 +1,48 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Event Handlers and Binding Methods Techniques
 
-## Available Scripts
+## Introducing Event handlers and pros/cons of each binding technique
 
-In the project directory, you can run:
+### You can bind your methods in 3 different ways:
 
-### `npm start`
+## 1. Bind inline
+<div> 
+  onClick={this.handleClick.bind(this)}
+</div>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#CONS:
+1. It's very explicit.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+#PROS:
+1. If we need to pass to multiple components we need to bind it multiple times.
+2. Binds create a new function each time a component is rendered inside render(). * In more complex apps it can have an impact in the app's performance. *
 
-### `npm test`
+## 2. Arrow function
+<div> 
+  onClick={() => this.handleClick()}
+</div>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#CONS:
+1. No mention of bind.
 
-### `npm run build`
+#PROS:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Intent less clear.
+2. If we need to pass to multiple components we need to create an arrow function every time.
+3. Binds create a new function each time a component is rendered inside render(). * In more complex apps it can have an impact in the app's performance. *
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## 3. Bind in the constructor
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#PROS:
+1. You only need to bind once.
+2. It's more performant.
 
-### `npm run eject`
+#CONS:
+1. It's lengthy.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- It's easier to test with a plain function.
+- It's easier to read.
+- This pattern comes up all the time in REDUX. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+_The content described in this README file was extracted from the_ [The Modern React Bootcamp](https://www.udemy.com/course/modern-react-bootcamp/) _by Colt Steele._
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+_The concepts in this practice exercise were learned by following the step by step tutorial from Colt Steele's course. This exercise however, like in most of my repositories, have been done from scratch (not copied and pasted) and modified to implement previous concepts._
