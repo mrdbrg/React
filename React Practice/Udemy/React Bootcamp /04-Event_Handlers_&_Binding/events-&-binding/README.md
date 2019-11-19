@@ -5,33 +5,45 @@
 ### You can bind your methods in 3 different ways:
 
 ## 1. Bind inline
+```
 <div> 
   onClick={this.handleClick.bind(this)}
 </div>
-
-### CONS:
-1. It's very explicit.
+```
 
 ### PROS:
+1. It's very explicit.
+
+### CONS:
 1. If we need to pass to multiple components we need to bind it multiple times.
 2. Binds create a new function each time a component is rendered inside render(). * In more complex apps it can have an impact in the app's performance. *
 
 ## 2. Arrow function
+```
 <div> 
   onClick={() => this.handleClick()}
 </div>
-
-### CONS:
+```
+### PROS:
 1. No mention of bind.
 
-### PROS:
-
+### CONS:
 1. Intent less clear.
 2. If we need to pass to multiple components we need to create an arrow function every time.
 3. Binds create a new function each time a component is rendered inside render(). * In more complex apps it can have an impact in the app's performance. *
 
 ## 3. Bind in the constructor
+```
+constructor(props) {
+  super(props)
+  (...code...)
+  this.handleClick = this.handleClick.bind(this)
+}
 
+<div> 
+  onClick={this.handleClick}
+</div>
+```
 ### PROS:
 1. You only need to bind once.
 2. It's more performant.
