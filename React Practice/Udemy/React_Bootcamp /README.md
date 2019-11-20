@@ -1,4 +1,4 @@
-# Import in React
+# Important in React
 
 ## List and Keys
 
@@ -32,3 +32,5 @@ let todoItems = this.state.todos.map((todo, idx) =>
 )
 ```
 
+- Do not use indexes for keys if item order may change or items can be deleted. This can cause performance problems or bugs with component state.
+Article from [Robin Pokorny explains](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318).
