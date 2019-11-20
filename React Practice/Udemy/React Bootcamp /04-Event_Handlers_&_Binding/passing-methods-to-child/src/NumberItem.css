@@ -1,0 +1,17 @@
+.NumberItem {
+  width: 10em;
+  font-size: 2em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.NumberItem button {
+  height: 3em;
+  width: 4em;
+  padding: 0.5em;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}

@@ -1,18 +1,33 @@
 import React, { Component } from 'react'
-// import "./NumberList.css"
+import NumberItem from './NumberItem'
+import "./NumberList.css"
 
 class NumberList extends Component {
   constructor(props) {
     super(props)
-    this.state = { num: [1,2,3,4,5] }
+    this.state = {
+      allItems: ["Lemon","Orange","Coconut","Avocado","Chocolate"]
+    }
+    this.remove = this.remove.bind(this);
   }
 
-  
+  remove(item) {
+    this.setState(state => ({
+      allItems: state.allItems.filter(i => i !== item)
+    }))
+  }
+
   render() {
+    let items = this.state.allItems.map(item => ( <NumberItem value={item} remove={this.remove}/> ))
     return (
-      <h1>Number List</h1>
+      <div className="NumberList">
+        <h1>List</h1>
+        <ul>{items}</ul>
+      </div>
     )
   }
 }
 
 export default NumberList
+
+// ["Lemon","Orange","Coconut","Avocado","Chocolate"]
