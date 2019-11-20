@@ -36,5 +36,5 @@ let todoItems = this.state.todos.map((todo, idx) =>
 Article from [Robin Pokorny explains](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318).
 
 ## Libraries that will help create unique identifiers:
-[shortid](https://www.npmjs.com/package/shortid)
-[uuid](https://www.npmjs.com/package/uuid)
+- [shortid](https://www.npmjs.com/package/shortid)
+- [uuid](https://www.npmjs.com/package/uuid)
