@@ -18,7 +18,7 @@
 - It's convinient to have a JS function that:
   - Handles the submission of the form and 
   - has access to the data the user entered
-- The technique to get this is **controlled component**
+- The technique to get this is *controlled component*
 
 ## Controlled Components
 
