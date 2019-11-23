@@ -19,17 +19,10 @@
 - The technique to get this is **controlled component**
 
 ## Controlled Components
-- In HTML, form elements such as <input>, <textarea>, and <select> 
+  - In HTML, form elements such as <input>, <textarea>, and <select> 
   typically maintain their own state and update it based on use input.
-- In React, mutable state is kept in the state of components, and only 
+  - In React, mutable state is kept in the state of components, and only 
   updated with **setState()**.
-
-## How data flows:
-- A parent component defines a function.
-- The function is passed as props to child component.
-- The child component invokes the prop.
-- The parent function is called, usually setting new state.
-- The parent component is re-rendered along with its children.
 
 _The content described in this README file is often a summary from the_ [The Modern React Bootcamp](https://www.udemy.com/course/modern-react-bootcamp/) _by Colt Steele._
 
