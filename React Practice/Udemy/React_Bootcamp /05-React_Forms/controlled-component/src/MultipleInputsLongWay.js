@@ -62,9 +62,9 @@ class MultipleInputsLongWay extends Component {
             onChange={this.handleEmailChange} />
           <p>Password</p>
           <input 
-            type="text"
+            type="password"
             value={this.state.password}
-            placeholder="Pa$$word"
+            placeholder="Password"
             onChange={this.handlePasswordChange}/>
           <button> Add</button>
         </form>
