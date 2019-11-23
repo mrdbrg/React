@@ -33,6 +33,37 @@
   - What happens when the user types (this gets kept in state).
 - Input elements controlled in this way are called **"controlled components"**.
 
+```
+class NameForm extends Component {
+  constructor(props) {
+    super(props);
+    // default fullName is an empty string
+    this.state = { fullName: '' };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(evt) {
+    // do something with form data
+  }
+  handleChange(evt) {
+    // runs on every keystroke event
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label for="fullname">Full Name:</label>
+        <input name="fullname" value={this.state.fullName}
+          onChange={this.handleChange}
+        />
+        <button>Add!</button>
+      </form>
+    );
+  }
+}
+```
+
 ## How the Controlled Form Works
 
 - Since value attribute is set on element, displayed value will always be this.state.propertyName - making the React state the source of truth.
