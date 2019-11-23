@@ -46,9 +46,9 @@ class NameForm extends Component {
 ... 
 handleChange(event) {
 // runs on every keystroke
-this.setState({
-  fullName: event.target.value
-});
+  this.setState({
+    fullName: event.target.value
+  });
 }
 ...
 }
