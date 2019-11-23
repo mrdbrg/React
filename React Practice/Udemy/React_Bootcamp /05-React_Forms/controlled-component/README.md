@@ -140,3 +140,14 @@ class NameForm extends Component {  // ...
 } // end
 ```
 - Using this method, *the keys in state have to match the input name attributes exatly*.
+
+## The htmlFor Attribute
+
+- Whenever you add a *label* element to your form and need to associate it with the *input* element through the id attribute, in plain HTML we use the attribute **for**. But in React we will use **htmlFor** instead - the same way we use **className** instead of **class**-.
+
+Example:
+```
+<label htmlFor="username">User Name</label>
+<input id="username"/>
+```
+- Keep in mind that *label*s not only create a better experience for users reading the form, but also a much better experience for users using screen readers.
