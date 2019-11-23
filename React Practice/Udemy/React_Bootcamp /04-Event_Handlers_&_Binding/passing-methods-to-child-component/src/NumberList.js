@@ -18,7 +18,7 @@ class NumberList extends Component {
   }
 
   render() {
-    let items = this.state.allItems.map(item => ( <NumberItem value={item} remove={this.remove}/> ))
+    let items = this.state.allItems.map((item) => ( <NumberItem value={item} remove={this.remove}/> ))
     return (
       <div className="NumberList">
         <h1>List</h1>
