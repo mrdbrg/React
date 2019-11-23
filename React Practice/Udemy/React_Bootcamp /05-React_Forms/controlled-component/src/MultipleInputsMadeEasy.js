@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class MultipleInputsLongWay extends Component {
+class MultipleInputsMadeEasy extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -10,21 +10,11 @@ class MultipleInputsLongWay extends Component {
     }
 
     this.handleChange = this.handleChange.bind(this);  
-    this.handleEmailChange = this.handleEmailChange.bind(this);  
-    this.handlePasswordChange = this.handlePasswordChange.bind(this);  
     this.handleSubmit = this.handleSubmit.bind(this);  
   }
 
   handleChange(event) {
-    this.setState({ username: event.target.value })
-  }
-
-  handleEmailChange(event) {
-    this.setState({ email: event.target.value })
-  }
-
-  handlePasswordChange(event) {
-    this.setState({ password: event.target.value })
+    this.setState({ [event.target.name]: event.target.value })
   }
 
   handleSubmit(event) {
@@ -47,25 +37,28 @@ class MultipleInputsLongWay extends Component {
   render() {
     return (
       <div>
-        <h1>Multiple Inputs Long Way</h1>
+        <h1>Multiple Inputs Made Easy</h1>
         <form onSubmit={this.handleSubmit}>
           <p>What is your name?</p>
           <input 
-            type="text" 
+            type="text"
+            name="username" 
             value={this.state.username} 
             onChange={this.handleChange} />
           <p>Email</p>
           <input 
-            type="text" 
+            type="text"
+            name="email" 
             value={this.state.email} 
             placeholder="example@email.com"
-            onChange={this.handleEmailChange} />
+            onChange={this.handleChange} />
           <p>Password</p>
           <input 
-            type="text"
+            type="password"
+            name="password"
             value={this.state.password}
-            placeholder="Pa$$word"
-            onChange={this.handlePasswordChange}/>
+            placeholder="Password"
+            onChange={this.handleChange}/>
           <button> Add</button>
         </form>
       </div>
@@ -73,4 +66,4 @@ class MultipleInputsLongWay extends Component {
   }
 }
 
-export default MultipleInputsLongWay
+export default MultipleInputsMadeEasy

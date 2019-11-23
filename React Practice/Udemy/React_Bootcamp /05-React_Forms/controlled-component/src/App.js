@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css';
 import Form from './Form';
 import MultipleInputsLongWay from './MultipleInputsLongWay';
+import MultipleInputsMadeEasy from './MultipleInputsMadeEasy';
 
 class App extends Component {
   render() {
@@ -9,6 +10,7 @@ class App extends Component {
       <div className="App">
         <Form />
         <MultipleInputsLongWay />
+        <MultipleInputsMadeEasy />
       </div>
     )
   }
