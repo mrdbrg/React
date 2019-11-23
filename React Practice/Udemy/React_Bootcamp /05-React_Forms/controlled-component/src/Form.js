@@ -24,7 +24,7 @@ class Form extends Component {
   render() {
     return (
       <div>
-        <h1>Form</h1>
+        <h1>Form Demo</h1>
         <form onSubmit={this.handleSubmit}>
           <p>What is your name?</p>
           <input type="text" value={this.state.username} onChange={this.handleChange}/>
