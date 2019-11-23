@@ -21,5 +21,6 @@
 - The technique to get this is **controlled component**
 
 ## Controlled Components
-- In HTML, form elements such as <input>, <textarea>, and <select> typically maintain their own state and update it based on use input. 
-- React mutable state is kept in the state of components, and only updated with setState.
+
+  - In HTML, form elements such as <input>, <textarea>, and <select> typically maintain their own state and update it based on use input.
+  - React mutable state is kept in the state of components, and only updated with setState.
