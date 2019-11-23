@@ -84,3 +84,58 @@ handleChange(event) {
 ...
 }
 ```
+
+## Writing Forms with Multiple Inputs
+
+### Review ES2015
+
+**Computed Property Names**
+This includes the ability to create objects with dynamic keys based on JavaScript expressions.
+### ES5
+```
+var employeesData = {};
+var employeeId = 1234256;
+employeedsData[employeeId] = "Kevin Hart";
+```
+### ES2015
+```
+var employeeId = 1234256;
+var employeesData = {
+  // property computed inside the object literal
+  [employeeId] = "Kevin Hart"
+};
+```
+
+### Application To React Form Components
+Instead of making separate **onChage** hangler for every single input, we can make a generic function for multiple inputs.
+
+## Handling Multiple Inputs
+- To handle multiple controlled inputs, add the HTML **name** attribute to each JSX input element and let handler function decide the appropriate key in state to update based on **event.target.name.**
+
+Example:
+```
+class NameForm extends Component {  // ...
+  handleChange(evt) {
+    this.setState({ [evt.target.name]: evt.target.value });
+  }
+
+  render() {
+    return (
+        <form onSubmit={this.handleSubmit}>
+
+          <label htmlFor="firstName">First:</label>
+          <input id="firstName" name="firstName"
+                 value={this.state.firstName}
+                 onChange={this.handleChange} />
+
+          <label htmlFor="lastName">Last:</label>
+          <input id="lastName" name="lastName"
+                 value={this.state.lastName}
+                 onChange={this.handleChange} />
+          <button>Add a new person!</button>
+
+        </form>
+    );
+  }
+} // end
+```
