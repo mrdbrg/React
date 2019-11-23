@@ -47,7 +47,7 @@ class MultipleInputsLongWay extends Component {
   render() {
     return (
       <div>
-        <h1>Form Demo</h1>
+        <h1>Multiple Inputs Long Way</h1>
         <form onSubmit={this.handleSubmit}>
           <p>What is your name?</p>
           <input 
