@@ -139,3 +139,4 @@ class NameForm extends Component {  // ...
   }
 } // end
 ```
+- Using this method, *the keys in state have to match the input name attributes exatly*.
