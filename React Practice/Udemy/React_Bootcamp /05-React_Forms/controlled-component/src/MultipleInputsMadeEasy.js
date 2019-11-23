@@ -12,7 +12,7 @@ class MultipleInputsMadeEasy extends Component {
     this.handleChange = this.handleChange.bind(this);  
     this.handleSubmit = this.handleSubmit.bind(this);  
   }
-
+  // Making use of Computed Property Names from ES2015
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value })
   }
