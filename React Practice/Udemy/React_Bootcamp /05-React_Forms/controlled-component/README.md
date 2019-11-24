@@ -152,9 +152,4 @@ Example:
 ```
 - Keep in mind that *label*s not only create a better experience for users reading the form, but also a much better experience for users using screen readers.
 
-## Passing Data Up to a Parent Component
-**In React we generally have downward data flow. "Smart" parent components with simpler child components.**
-
-Forms, however, involve a lot of state to make a React form work. Forms are usually used across an application so it's common to make a form into its own component.  
-
 
