@@ -1,43 +1,43 @@
 import React, { Component } from 'react'
 import './ShoppingList.css'
 import ShoppingListForm from './ShoppingListForm'
+import uuid from 'uuid/v4'
 
 class ShoppingList extends Component {
   constructor(props) {
     super(props)
     this.state = {
       items: [
-        {name: "Tomato", qty: 12},
-        {name: "Potatoes", qty: 6},
-        {name: "Soy Milk", qty: 1}
+        {name: "Tomatoes", qty: 12, id: uuid()},
+        {name: "Potatoes", qty: 6,  id: uuid()}
       ]
     }
     this.addItem = this.addItem.bind(this);
   }
 
   addItem(item) {
-    this.setState(oldState => ({
-      items: [...oldState.items, item]
-    }));
+    let newItem = {...item, id: uuid()}
+    this.setState(oldSt => ({
+      items: [...oldSt.items, newItem]
+    }))
   }
 
-  renderList() {
-   return (
+  renderItems() {
+    return (
       <ul>
-      {
-        this.state.items.map(item => (
-          <li>{item.name}:{item.qty}</li>
-        ))
-      }
-    </ul>
-   )
+        {
+          this.state.items.map(item => (
+            <li key={item.id}>{item.name}:${item.qty}</li>
+          ))}
+      </ul>
+    )
   }
 
   render() {
     return (
       <div className="ShoppingList">
         <h1>Shopping List</h1>
-        {this.renderList()}
+        {this.renderItems()}
         <ShoppingListForm addItem={this.addItem}/>
       </div>
     )

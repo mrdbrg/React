@@ -9,35 +9,33 @@ class ShoppingListForm extends Component {
   }
 
   handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value })
+    this.setState({ [event.target.name]: [event.target.value] })
   }
 
   handleSubmit(event) {
     event.preventDefault()
     this.props.addItem(this.state)
-    this.setState({ items: [{name: "", qty: ""}] })
+    this.setState({ name: "" , qty: "" })
   }
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label htmlFor='name'>Item Name:</label>
+        <label htmlFor="name">Item Name:</label> 
         <input 
-          type='text'
-          id="name"   // id
-          name='name' 
-          value={this.state.name}   // value
+          id="name"
+          name="name"
+          value={this.state.name}
           onChange={this.handleChange}
-          />
-        <label htmlFor='qty'>Item Quantity:</label>
-        <input 
-          type='text'
+        />
+        <label htmlFor="qty">Quantity:</label> 
+        <input
           id="qty"
-          name='qty' 
+          name="qty"
           value={this.state.qty}
           onChange={this.handleChange}
-          />
-          <button>Add Item</button>
+        />
+        <button>Add Item</button>
       </form>
     )
   }
