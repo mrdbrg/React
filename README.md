@@ -35,6 +35,23 @@ let todoItems = this.state.todos.map((todo, idx) =>
 - Do not use indexes for keys if item order may change or items can be deleted. This can cause performance problems or bugs with component state.
 Article from [Robin Pokorny explains](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318).
 
-## Libraries that will help create unique identifiers:
+## Libraries that will help create unique ID's:
 - [shortid](https://www.npmjs.com/package/shortid)
 - [uuid](https://www.npmjs.com/package/uuid)
+
+### uuid installation:
+1. Open the terminal and cd into the react app you'd like to use the library.
+2. Instal uuid library
+```
+npm install uuid
+```
+3. Open your project on your preferred editor and import uuid to the component you'd like to use it.
+```
+import uuid from "uuid/v4"
+```
+4. To assign a unique ID throughout the app just call the function: 
+```
+// This will generate a unique id.
+uuid()
+```
+ 
