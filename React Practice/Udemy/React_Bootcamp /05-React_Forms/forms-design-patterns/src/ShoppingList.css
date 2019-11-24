@@ -1,0 +1,12 @@
+.ShoppingList {
+  margin: 0 auto;
+}
+
+.ShoppingList h1 {
+  font-size: 3em;
+}
+
+.ShoppingList li {
+  list-style-type: none;
+  font-size: 2em;
+}
