@@ -45,11 +45,11 @@ Article from [Robin Pokorny explains](https://medium.com/@robinpokorny/index-as-
 ```
 npm install uuid
 ```
-3. Open your project on your preferred editor and import uuid to the component you'd like to use it.
+3. Open your project on your preferred source-code editor and at the top of your component import uuid.
 ```
 import uuid from "uuid/v4"
 ```
-4. To assign a unique ID throughout the app just call the function: 
+4. To assign an unique ID throughout the app just call the function: 
 ```
 // This will generate a unique id.
 uuid()
