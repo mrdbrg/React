@@ -1,0 +1,15 @@
+.Todo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Todo button {
+  font-size: 0.5em;
+  margin-left: 20px;
+  border-radius: 5px;
+  padding: 10px;
+  font-weight: 700;
+  outline: none;
+}

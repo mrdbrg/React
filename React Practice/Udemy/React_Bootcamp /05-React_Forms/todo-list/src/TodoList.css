@@ -1,0 +1,12 @@
+.TodoList {
+  color: #fff;
+}
+
+.TodoList li {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  font-size: 2em;
+  list-style-type: none;
+  margin: 10px auto;
+}

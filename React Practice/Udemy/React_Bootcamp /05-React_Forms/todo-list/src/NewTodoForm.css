@@ -1,0 +1,33 @@
+.NewTodoForm {
+  background: lightcoral;
+  width: 40%;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 1.5em;
+}
+
+.NewTodoForm label {
+  padding: 1em;
+  font-weight: 700;
+  width: 100px;
+}
+
+.NewTodoForm input {
+  margin-left: 10px;
+  font-size: 1em;
+  height: 40px;
+  width: 250px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.NewTodoForm button {
+  margin-left: 140px;
+  font-size: 0.8em;
+  border-radius: 5px;
+  padding: 8px;
+  outline: none;
+}
