@@ -6,11 +6,13 @@ import SimpleFormClass from './SimpleFormClass';
 import SimpleFormHooks from './SimpleFormHooks';
 import FormHooksRefactor from './FormHooksRefactor';
 import Clicker from './Clicker';
+import StarWarMovies from './StarWarMovies';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
+      <StarWarMovies />   
       <h1>Change state</h1>
       <CounterClass />
       <CounterHooks />
