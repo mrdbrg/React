@@ -10,6 +10,12 @@ const StarWarMovies = () => {
     setNumber(e.target.value)
   }
 
+  const renderOptions = () => {
+    return [1,2,3,4,5,6,7].map(option => (
+    <option value={`${option}`}>{option}</option>
+    ))
+  }
+
   useEffect(() => {
     async function getData() {
       const response = await axios.get(`https://swapi.dev/api/films/${number}/`)
@@ -22,13 +28,7 @@ const StarWarMovies = () => {
     <div>
       <h3>Pick a movie</h3>
       <select value={number} onChange={handleChange}>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
+        {renderOptions()}
       </select>
       <div>
         <h4>{movie.title}</h4>
