@@ -7,8 +7,8 @@ const SimpleFormHooks = () => {
 
   return (
     <div>
-      <h2>Email: {email}</h2>
-      <h2>Password: {password}</h2>
+      <h3>Email: {email}</h3>
+      <h3>Password: {password}</h3>
         <label>Email</label>
         <input 
           type="text" 

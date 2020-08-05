@@ -4,6 +4,7 @@ import CounterHooks from './CounterHooks';
 import Toggle from './Toggle';
 import SimpleFormClass from './SimpleFormClass';
 import SimpleFormHooks from './SimpleFormHooks';
+import FormHooksRefactor from './FormHooksRefactor';
 import './App.css';
 
 function App() {
@@ -21,8 +22,11 @@ function App() {
       <hr/>
       <div>
         <h1>Forms</h1>
+        <h2>Class</h2>
         <SimpleFormClass />
+        <h2>Hooks</h2>
         <SimpleFormHooks />
+        <FormHooksRefactor />
       </div>
       <hr/>
     </div>
