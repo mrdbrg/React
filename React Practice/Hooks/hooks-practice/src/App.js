@@ -5,6 +5,7 @@ import Toggle from './Toggle';
 import SimpleFormClass from './SimpleFormClass';
 import SimpleFormHooks from './SimpleFormHooks';
 import FormHooksRefactor from './FormHooksRefactor';
+import Clicker from './Clicker';
 import './App.css';
 
 function App() {
@@ -28,6 +29,8 @@ function App() {
         <SimpleFormHooks />
         <FormHooksRefactor />
       </div>
+      <hr/>
+        <Clicker />
       <hr/>
     </div>
   );
