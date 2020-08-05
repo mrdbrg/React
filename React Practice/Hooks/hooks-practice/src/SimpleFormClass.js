@@ -16,7 +16,7 @@ class SimpleFormClass extends Component {
   render() {
     return (
       <div>
-        <h1>You entered: {this.state.email}</h1>
+        <h2>You entered: {this.state.email}</h2>
         <input 
           type="text"
           value={this.state.email}
