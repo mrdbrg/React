@@ -22,22 +22,34 @@ class App extends React.Component {
 
     switch (action.type) {
       case "INCREMENT":
-        this.incrementCounter()
+        this.setState(state => ({ counter: state.counter + 1 }))
         break;
       case "DECREMENT":
-        this.decrementCounter()
+        this.setState(state => ({ counter: state.counter - 1 }))
         break;
       case "TOGGLE_PAUSE":
-        this.togglePaused()
+        this.setState(state => ({ paused: !state.paused }))
         break;
       case "LIKE_NUMBER":
-        this.likeNumber()
+        this.setState(state => {
+          const count = (state.likedNumbers[state.counter] || 0 ) + 1
+    
+          return {
+            likedNumbers: {
+              ...state.likedNumbers,
+              [state.counter]: count
+            }
+          }
+        })
         break;
       case "UPDATE_COMMENT":
-        this.updateComment(action.payload)
+        this.setState({ comment: action.payload })
         break;
       case "ADD_COMMENT":
-        this.addComment(action.payload)
+        this.setState(state => ({
+          comments: [...state.comments, state.comment],
+          comment: ""
+        }))
         break;
 
       default:
@@ -48,34 +60,9 @@ class App extends React.Component {
   componentDidMount() {
     setInterval(() => {
       if (!this.state.paused) {
-        this.incrementCounter()
+        this.masterFunc({ type: "INCREMENT" })
       }
     }, 1000)
-  }
-
-  togglePaused = () => this.setState(state => ({ paused: !state.paused }))
-  decrementCounter = () => this.setState(state => ({ counter: state.counter - 1 }))
-  incrementCounter = () => this.setState(state => ({ counter: state.counter + 1 }))
-  updateComment = comment => this.setState({ comment })
-
-  likeNumber = () => {
-    this.setState(state => {
-      const count = (state.likedNumbers[state.counter] || 0 ) + 1
-
-      return {
-        likedNumbers: {
-          ...state.likedNumbers,
-          [state.counter]: count
-        }
-      }
-    })
-  }
-
-  addComment = e => {
-    this.setState(state => ({
-      comments: [...state.comments, state.comment],
-      comment: ""
-    }))
   }
 
   render() {
