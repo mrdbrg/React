@@ -15,6 +15,36 @@ class App extends React.Component {
     comments: []
   }
 
+  // Understanding redux patterns of message passing and pure functions 
+  // to abstract how state is being set/updated. 
+  // masterFunc will be the only function setting/updating state.
+  masterFunc = (action) => {
+
+    switch (action.type) {
+      case "INCREMENT":
+        this.incrementCounter()
+        break;
+      case "DECREMENT":
+        this.decrementCounter()
+        break;
+      case "TOGGLE_PAUSE":
+        this.togglePaused()
+        break;
+      case "LIKE_NUMBER":
+        this.likeNumber()
+        break;
+      case "UPDATE_COMMENT":
+        this.updateComment(action.payload)
+        break;
+      case "ADD_COMMENT":
+        this.addComment(action.payload)
+        break;
+
+      default:
+        break;
+    }
+  }  
+
   componentDidMount() {
     setInterval(() => {
       if (!this.state.paused) {
@@ -26,7 +56,7 @@ class App extends React.Component {
   togglePaused = () => this.setState(state => ({ paused: !state.paused }))
   decrementCounter = () => this.setState(state => ({ counter: state.counter - 1 }))
   incrementCounter = () => this.setState(state => ({ counter: state.counter + 1 }))
-  updateComment = e => this.setState({ comment: e.target.value })
+  updateComment = comment => this.setState({ comment })
 
   likeNumber = () => {
     this.setState(state => {
@@ -42,7 +72,6 @@ class App extends React.Component {
   }
 
   addComment = e => {
-    e.preventDefault()
     this.setState(state => ({
       comments: [...state.comments, state.comment],
       comment: ""
@@ -58,17 +87,13 @@ class App extends React.Component {
         <Header counter={counter}/>
         <Buttons 
           paused={paused}
-          decrementCounter={this.decrementCounter}
-          incrementCounter={this.incrementCounter}
-          likeNumber={this.likeNumber}
-          togglePaused={this.togglePaused}
+          masterFunc={this.masterFunc}
         />
         <Likes likedNumbers={likedNumbers}/>
         <Comments comments={comments}/>
         <CommentForm 
+          masterFunc={this.masterFunc}
           comment={comment}
-          addComment={this.addComment}
-          updateComment={this.updateComment}
         />
       </div>
     );

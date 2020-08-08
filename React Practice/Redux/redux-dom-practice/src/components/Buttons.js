@@ -1,19 +1,18 @@
 import React from 'react'
 
-const Buttons = ({ paused, decrementCounter, incrementCounter, likeNumber, togglePaused }) => {
-  console.log()
+const Buttons = ({ paused, masterFunc }) => {
   return (
     <>
-      <button onClick={decrementCounter}>
+      <button onClick={() => masterFunc({ type: "DECREMENT" })}>
         <span role="img" aria-label="minus">➖</span>
       </button>
-      <button onClick={incrementCounter}>
+      <button onClick={() => masterFunc({ type: "INCREMENT" })}>
         <span role="img" aria-label="plus">➕</span>
       </button>
-      <button onClick={likeNumber}>
+      <button onClick={() => masterFunc({ type: "LIKE_NUMBER" })}>
         <span role="img" aria-label="heart">❤️</span>
       </button>
-      <button onClick={togglePaused}>
+      <button onClick={() => masterFunc({ type: "TOGGLE_PAUSE" })}>
         <span role="img" aria-label={paused ? "play" : "pause"}>
           {paused ? "▶️" : "⏸"}
         </span>

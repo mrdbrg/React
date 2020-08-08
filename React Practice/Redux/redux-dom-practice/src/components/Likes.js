@@ -1,8 +1,6 @@
 import React from 'react'
 
 const Likes = ({ likedNumbers }) => {
-  console.log(likedNumbers)
-
   return (
     <>
       <h2>Likes:</h2>
