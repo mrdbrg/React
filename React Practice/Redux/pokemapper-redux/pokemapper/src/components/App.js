@@ -13,7 +13,7 @@ const App = ({ icon }) => {
     <div className={`App ${icon}`}>
       <Header/>
       <main>
-        <PokemonList pokemons={pokemons} />
+        <PokemonList/>
         <PokemonMap pokemons={pokemons} position={position} icon={icon}/>
       </main>
     </div>
