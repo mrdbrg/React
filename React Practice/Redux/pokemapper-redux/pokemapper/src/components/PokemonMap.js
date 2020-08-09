@@ -33,7 +33,7 @@ const PokemonMap = () => {
   })
 
   const map = maps[icon] ? maps[icon] : maps["☀️"]
-
+  
   return (
     <Map center={position} zoom={15} onClick={(mapClickEvent) => console.log(mapClickEvent)} style={{ height: "84vh" }}>
       <TileLayer url={map.url} attribution={map.attribution} />
