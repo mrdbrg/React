@@ -1,4 +1,4 @@
 ## Intro to Redux
 
-### Redux common patterns
-### Redux application
+### Redux common patterns using React only
+### Applying Redux library
