@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux';
 
 const CommentForm = ({ comment, updateComment, addComment }) => {
 
@@ -18,4 +19,17 @@ const CommentForm = ({ comment, updateComment, addComment }) => {
   )
 }
 
-export default CommentForm
+const mapStateToProps = state => {
+  return {
+    comment: state.comment
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    addComment: () => dispatch({ type: "ADD_COMMENT" }),
+    updateComment: text => dispatch({ type: "UPDATE_COMMENT", payload: text })
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CommentForm)

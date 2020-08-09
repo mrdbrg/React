@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux';
 
 const Header = ({ counter }) => {
   return (
@@ -9,4 +10,10 @@ const Header = ({ counter }) => {
   )
 }
 
-export default Header
+const mapStateToProps = state => {
+  return {
+    counter: state.counter
+  }
+}
+
+export default connect(mapStateToProps)(Header)

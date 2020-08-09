@@ -1,6 +1,9 @@
 import React from 'react'
+import { connect } from 'react-redux';
 
-const Buttons = ({ paused, increment, decrement, togglePause, likeNumber }) => {
+const Buttons = ({ increment, decrement, likeNumber, togglePause, paused }) => {
+
+  console.log(togglePause, paused)
   return (
     <>
       <button onClick={decrement}>
@@ -21,4 +24,30 @@ const Buttons = ({ paused, increment, decrement, togglePause, likeNumber }) => {
   )
 }
 
-export default Buttons;
+const mapStateToProps = state => {
+  return {
+    paused: state.paused
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    increment: () => dispatch({ type: "INCREMENT" }),
+    decrement: () => dispatch({ type : "DECREMENT" }),
+    likeNumber: () => dispatch({ type: "LIKE_NUMBER" }),
+    togglePause: () => dispatch({ type: "TOGGLE_PAUSE" })
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Buttons);
+
+
+
+
+
+
+
+
+
+// togglePause: () => dispatch({ type: "TOGGLE_PAUSE" }),
+
