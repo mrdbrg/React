@@ -12,3 +12,6 @@
 ```
 npm install redux
 ```
+**Concepts**
+*The key concepts of working with redux is the single source of truth - to manage state -.
+In redux that state is going to live in 'store'*
