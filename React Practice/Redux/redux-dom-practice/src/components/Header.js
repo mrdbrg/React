@@ -1,7 +1,10 @@
-import React from 'react'
-import { connect } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-const Header = ({ counter }) => {
+const Header = () => {
+
+  const counter = useSelector(state => state.counter)
+
   return (
     <>
       <h1>Redux DOM Challenge</h1>
@@ -10,10 +13,10 @@ const Header = ({ counter }) => {
   )
 }
 
-const mapStateToProps = state => {
-  return {
-    counter: state.counter
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     counter: state.counter
+//   }
+// }
 
-export default connect(mapStateToProps)(Header)
+export default Header;

@@ -1,7 +1,12 @@
 import React from 'react'
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
+// import { connect } from 'react-redux';
 
-const Likes = ({ likedNumbers }) => {
+// const Likes = ({ likedNumbers }) => {
+const Likes = () => {
+
+  const likedNumbers = useSelector(state => state.likedNumbers)
+
   return (
     <>
       <h2>Likes:</h2>
@@ -11,10 +16,11 @@ const Likes = ({ likedNumbers }) => {
   )
 }
 
-const mapStateToProps = state => {
-  return {
-    likedNumbers: state.likedNumbers
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     likedNumbers: state.likedNumbers
+//   }
+// }
 
-export default connect(mapStateToProps)(Likes);
+// export default connect(mapStateToProps)(Likes);
+export default Likes;

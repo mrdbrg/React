@@ -1,7 +1,11 @@
 import React from 'react'
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
+// import { connect } from 'react-redux';
 
-const Comments = ({ comments }) => {
+// const Comments = ({ comments }) => {
+const Comments = () => {
+
+  const comments = useSelector(state => state.comments)
 
   return (
     <>
@@ -12,10 +16,11 @@ const Comments = ({ comments }) => {
   )
 }
 
-const mapStateToProps = state => {
-  return {
-    comments: state.comments
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     comments: state.comments
+//   }
+// }
 
-export default connect(mapStateToProps)(Comments)
+// export default connect(mapStateToProps)(Comments)
+export default Comments;
