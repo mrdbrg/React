@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import Buttons from "./Buttons";
 import Header from "./Header";
 import Likes from "./Likes";
@@ -7,35 +8,24 @@ import CommentForm from "./CommentForm";
 
 class App extends React.Component {
 
-  state = {
-    counter: 0,
-    paused: false, 
-    likedNumbers: {},
-    comment: "",
-    comments: []
-  }
-
-  // the dispatch function adds consistency to the interface for updating state.
-  // when calling the dispatch function we need to pass the type that is defined
-  // in reducer.
   dispatch = action => {
     // use reducers to calculate the next state
-    const nextState = reducer(this.state, action)
-    // setState
-    this.setState(nextState)
+    // const nextState = reducer(this.state, action)
+    // // setState
+    // this.setState(nextState)
   }
 
   componentDidMount() {
     setInterval(() => {
-      if (!this.state.paused) {
+      if (!this.props.paused) {
         this.dispatch({ type: "INCREMENT" })
       }
     }, 1000)
   }
 
   render() {
-    
-    const { counter, paused, likedNumbers, comment, comments } = this.state
+    console.log(this.props)
+    const { counter, paused, likedNumbers, comment, comments } = this.props
 
     return (
       <div className="App">
@@ -55,4 +45,19 @@ class App extends React.Component {
   }
 }
 
-export default App;
+// this function takes in redux state as argument 
+// return an object that has the value we want for props.
+const mapStateToProps = state => {
+  return {
+    counter: state.counter,
+    paused: state.paused, 
+    likedNumbers: state.likedNumbers,
+    comment: state.comment,
+    comments: state.comments
+  }
+}
+
+// connect is a Higher Order Funciton that returns onother function 
+// and the function it returns is a Higher Order Component. 
+// This syntax allows us to connect this component to the redux store.
+export default connect(mapStateToProps)(App);
