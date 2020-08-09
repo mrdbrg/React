@@ -1,9 +1,7 @@
 import React from 'react'
-// import { useDispatch, useSelector } from 'react-redux'
 import { Map, TileLayer } from 'react-leaflet'
+import { useSelector } from 'react-redux';
 import PokemonMarker from './PokemonMarker'
-// import { postPokemon } from '../store/pokemon/actions'
-// import { getPokemons } from '../store/pokemon/selectors'
 
 const maps = {
   "☀️": {
@@ -24,18 +22,17 @@ const maps = {
   },
 }
 
-const PokemonMap = ({ position, pokemons, icon }) => {
-  // const dispatch = useDispatch()
-  // const pokemons = useSelector(getPokemons)
-  // const { position, weather } = useSelector(state => state.user)
-  // const { icon } = weather
+const PokemonMap = () => {
+
+  const { position, pokemons, icon } = useSelector(state => {
+    return {
+      position: state.position,
+      pokemons: state.pokemons,
+      icon: state.weather.icon
+    }
+  })
 
   const map = maps[icon] ? maps[icon] : maps["☀️"]
-
-  // const handleMapClick = mapDetails => {
-  //   const { lat, lng } = mapDetails.latlng
-  //   dispatch(postPokemon(lat, lng))
-  // }
 
   return (
     <Map center={position} zoom={15} onClick={(mapClickEvent) => console.log(mapClickEvent)} style={{ height: "84vh" }}>
