@@ -5,53 +5,6 @@ import Likes from "./Likes";
 import Comments from "./Comments";
 import CommentForm from "./CommentForm";
 
-  // calculating next state.
-  // reducer function => take in the previous state and an action, and return the next state.
-  // reducer needs to be a PURE function - given the same arguments it produces the same results 
-  // without any side effects.
- const reducer = (state, action) => {
-  switch (action.type) {
-    case "INCREMENT":
-      return {
-        ...state,
-        counter: state.counter + 1
-      }
-    case "DECREMENT":
-      return {
-        ...state,
-        counter: state.counter - 1
-      }
-    case "TOGGLE_PAUSE":
-      return {
-        ...state,
-        paused: !state.paused
-      }
-    case "LIKE_NUMBER":
-        const count = (state.likedNumbers[state.counter] || 0 ) + 1
-  
-        return {
-          ...state,
-          likedNumbers: {
-            ...state.likedNumbers,
-            [state.counter]: count
-          }
-        }
-    case "UPDATE_COMMENT":
-      return { 
-        ...state,
-        comment: action.payload 
-      }
-    case "ADD_COMMENT":
-      return {
-        ...state,
-        comments: [...state.comments, state.comment],
-        comment: ""
-      }
-    default:
-      return state
-  }
-}  
-
 class App extends React.Component {
 
   state = {
