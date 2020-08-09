@@ -1,3 +1,0 @@
-export const ADD_POKEMON = "ADD_POKEMON"
-export const SET_POKEMONS = "SET_POKEMONS"
-export const FETCH_POKEMONS = "FETCH_POKEMONS"
