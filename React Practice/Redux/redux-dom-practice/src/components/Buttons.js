@@ -1,18 +1,18 @@
 import React from 'react'
 
-const Buttons = ({ paused, masterFunc }) => {
+const Buttons = ({ paused, dispatch }) => {
   return (
     <>
-      <button onClick={() => masterFunc({ type: "DECREMENT" })}>
+      <button onClick={() => dispatch({ type: "DECREMENT" })}>
         <span role="img" aria-label="minus">➖</span>
       </button>
-      <button onClick={() => masterFunc({ type: "INCREMENT" })}>
+      <button onClick={() => dispatch({ type: "INCREMENT" })}>
         <span role="img" aria-label="plus">➕</span>
       </button>
-      <button onClick={() => masterFunc({ type: "LIKE_NUMBER" })}>
+      <button onClick={() => dispatch({ type: "LIKE_NUMBER" })}>
         <span role="img" aria-label="heart">❤️</span>
       </button>
-      <button onClick={() => masterFunc({ type: "TOGGLE_PAUSE" })}>
+      <button onClick={() => dispatch({ type: "TOGGLE_PAUSE" })}>
         <span role="img" aria-label={paused ? "play" : "pause"}>
           {paused ? "▶️" : "⏸"}
         </span>

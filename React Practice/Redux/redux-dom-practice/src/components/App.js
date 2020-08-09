@@ -5,6 +5,53 @@ import Likes from "./Likes";
 import Comments from "./Comments";
 import CommentForm from "./CommentForm";
 
+  // calculating next state.
+  // reducer function => take in the previous state and an action, and return the next state.
+  // reducer needs to be a PURE function - given the same arguments it produces the same results 
+  // without any side effects.
+ const reducer = (state, action) => {
+  switch (action.type) {
+    case "INCREMENT":
+      return {
+        ...state,
+        counter: state.counter + 1
+      }
+    case "DECREMENT":
+      return {
+        ...state,
+        counter: state.counter - 1
+      }
+    case "TOGGLE_PAUSE":
+      return {
+        ...state,
+        paused: !state.paused
+      }
+    case "LIKE_NUMBER":
+        const count = (state.likedNumbers[state.counter] || 0 ) + 1
+  
+        return {
+          ...state,
+          likedNumbers: {
+            ...state.likedNumbers,
+            [state.counter]: count
+          }
+        }
+    case "UPDATE_COMMENT":
+      return { 
+        ...state,
+        comment: action.payload 
+      }
+    case "ADD_COMMENT":
+      return {
+        ...state,
+        comments: [...state.comments, state.comment],
+        comment: ""
+      }
+    default:
+      return state
+  }
+}  
+
 class App extends React.Component {
 
   state = {
@@ -15,52 +62,20 @@ class App extends React.Component {
     comments: []
   }
 
-  // Understanding redux patterns of message passing and pure functions 
-  // to abstract how state is being set/updated. 
-  // masterFunc will be the only function setting/updating state.
-  masterFunc = (action) => {
-
-    switch (action.type) {
-      case "INCREMENT":
-        this.setState(state => ({ counter: state.counter + 1 }))
-        break;
-      case "DECREMENT":
-        this.setState(state => ({ counter: state.counter - 1 }))
-        break;
-      case "TOGGLE_PAUSE":
-        this.setState(state => ({ paused: !state.paused }))
-        break;
-      case "LIKE_NUMBER":
-        this.setState(state => {
-          const count = (state.likedNumbers[state.counter] || 0 ) + 1
-    
-          return {
-            likedNumbers: {
-              ...state.likedNumbers,
-              [state.counter]: count
-            }
-          }
-        })
-        break;
-      case "UPDATE_COMMENT":
-        this.setState({ comment: action.payload })
-        break;
-      case "ADD_COMMENT":
-        this.setState(state => ({
-          comments: [...state.comments, state.comment],
-          comment: ""
-        }))
-        break;
-
-      default:
-        break;
-    }
-  }  
+  // the dispatch function adds consistency to the interface for updating state.
+  // when calling the dispatch function we need to pass the type that is defined
+  // in reducer.
+  dispatch = action => {
+    // use reducers to calculate the next state
+    const nextState = reducer(this.state, action)
+    // setState
+    this.setState(nextState)
+  }
 
   componentDidMount() {
     setInterval(() => {
       if (!this.state.paused) {
-        this.masterFunc({ type: "INCREMENT" })
+        this.dispatch({ type: "INCREMENT" })
       }
     }, 1000)
   }
@@ -74,12 +89,12 @@ class App extends React.Component {
         <Header counter={counter}/>
         <Buttons 
           paused={paused}
-          masterFunc={this.masterFunc}
+          dispatch={this.dispatch}
         />
         <Likes likedNumbers={likedNumbers}/>
         <Comments comments={comments}/>
         <CommentForm 
-          masterFunc={this.masterFunc}
+          masterFunc={this.dispatch}
           comment={comment}
         />
       </div>
