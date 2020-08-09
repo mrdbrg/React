@@ -2,6 +2,7 @@
 
 ### Redux common patterns using React only
 
+*building the following functions from scratch to comprehend redux pattern indepth*	
 - reducer 
 - dispatch
 
