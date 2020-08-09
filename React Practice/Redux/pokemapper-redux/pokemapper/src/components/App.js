@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getPokemons } from '../api';
 import Header from './Header';
 import PokemonList from './PokemonList';
+import { SET_POKEMONS } from '../store/types';
 
 const App = () => {
 
@@ -12,7 +13,7 @@ const App = () => {
 
   useEffect(() => {
     getPokemons()
-    .then(pokemons => dispatch({ type: "SET_POKEMONS", payload: pokemons }))
+    .then(pokemons => dispatch({ type: SET_POKEMONS, payload: pokemons }))
   }, [])
 
   return (
