@@ -1,19 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux'
 import PokemonMap from './PokemonMap';
+import { connect } from 'react-redux';
+import { getPokemons } from '../api';
 import Header from './Header';
 import PokemonList from './PokemonList';
-import { getPokemons } from '../api'
 
 class App extends React.Component {
 
   componentDidMount() {
     getPokemons()
-      .then(pokemons => this.props.setPokemons(pokemons))
+    .then(pokemons => {
+      this.props.setPokemons(pokemons)
+    })
   }
 
   render() {
-    console.log(this.props)
     const { icon } = this.props
     return (
       <div className={`App ${icon}`}>
@@ -28,7 +29,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => {
-  return {
+  return  {
     icon: state.weather.icon
   }
 }
@@ -39,4 +40,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App)
