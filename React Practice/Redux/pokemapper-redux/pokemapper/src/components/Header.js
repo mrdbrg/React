@@ -1,6 +1,9 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 
-const Header = ({ weather }) => {
+const Header = () => {
+
+  const weather = useSelector(state => state.weather)
 
   return (
     <div className="menu">
