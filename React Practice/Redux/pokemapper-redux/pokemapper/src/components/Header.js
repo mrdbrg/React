@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 const Header = () => {
 
-  const weather = useSelector(state => state.weather)
+  const weather = useSelector(state => state.user.weather)
 
   return (
     <div className="menu">

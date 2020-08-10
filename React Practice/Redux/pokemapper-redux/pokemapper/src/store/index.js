@@ -1,6 +1,15 @@
-import { createStore } from 'redux';
-import reducer from './reducer';
+import { createStore, combineReducers } from 'redux';
+import userReducer from './userReducer';
+import pokemonReducer from './pokemonReducer';
 
-const store = createStore(reducer)
+const rootReducer = combineReducers({
+  user: userReducer,
+  pokemon: pokemonReducer
+})
+
+const store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
 
 export default store;

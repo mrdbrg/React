@@ -8,9 +8,9 @@ import { SET_POKEMONS, SET_POSITION, SET_WEATHER } from '../store/types';
 
 const App = () => {
 
-  const icon = useSelector(state => state.weather.icon)
-  const position = useSelector(state => state.position)
-  const positionLoaded = useSelector(state => state.positionLoaded)
+  const icon = useSelector(state => state.user.weather.icon)
+  const position = useSelector(state => state.user.position)
+  const positionLoaded = useSelector(state => state.user.positionLoaded)
   const dispatch = useDispatch()
 
   useEffect(() => {

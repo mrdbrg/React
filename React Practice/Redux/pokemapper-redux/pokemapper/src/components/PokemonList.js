@@ -4,7 +4,7 @@ import Pokemon from './Pokemon'
 
 const PokemonList = () => {
 
-  const pokemons = useSelector(state => state.pokemons)
+  const pokemons = useSelector(state => state.pokemon.pokemons)
 
   return (
     <div className="pokemon-list">
