@@ -46,7 +46,7 @@ const App = () => {
       .then(weatherData => dispatch({ type: SET_WEATHER, payload: weatherData }))
 
      } 
-  }, [position, positionLoaded])
+  }, [position, positionLoaded, dispatch])
 
   return (
     <div className={`App ${icon}`}>
